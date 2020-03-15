@@ -24,7 +24,7 @@ variables:
   location: 'eastus'
 
   # subscription name
-  subName: 'Pay-As-You-Go'
+  subName: 'Ignite Demos'
 
   # cosmos db name
   cosmosdbName: 'apps30twtnosqlge'
@@ -43,7 +43,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Resource Group'
   inputs:
-    azureSubscription: 'Pay-As-You-Go(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
+    azureSubscription: 'Ignite Demos(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az group create --subscription "$(subName)" --name $(resourceGroup) --location $(location)'
@@ -52,7 +52,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Virtual Network'
   inputs:
-    azureSubscription: 'Pay-As-You-Go(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
+    azureSubscription: 'Ignite Demos(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az network vnet create --name igniteapps30vnet --subscription  "$(subName)" --resource-group $(resourceGroup)   --subnet-name default'
@@ -61,7 +61,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Cosmos DB'
   inputs:
-    azureSubscription: 'Pay-As-You-Go(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
+    azureSubscription: 'Ignite Demos(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az cosmosdb create --name $(cosmosdbName) --resource-group $(resourceGroup) --kind MongoDB --subscription "$(subName)"'
@@ -70,7 +70,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create SQL Instance'
   inputs:
-    azureSubscription: 'Pay-As-You-Go(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
+    azureSubscription: 'Ignite Demos(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -84,7 +84,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create ACR'
   inputs:
-    azureSubscription: 'Pay-As-You-Go(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
+    azureSubscription: 'Ignite Demos(207d0696-ea6a-47ce-aa92-87c7a3bebb00)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az acr create --resource-group $(resourceGroup) --name $(acrName) --sku Basic --subscription  "$(subName)" --admin-enabled true'
