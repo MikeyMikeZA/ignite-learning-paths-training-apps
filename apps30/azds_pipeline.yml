@@ -23,7 +23,7 @@ variables:
   location: 'eastus'
 
   # subscription name
-  subName: 'Ignite The Tour'
+  subName: '207d0696-ea6a-47ce-aa92-87c7a3bebb00'
 
   # cosmos db name
   cosmosdbName: 'apps30twtnosqlge'
